@@ -52,10 +52,6 @@ export class AuthService {
         return null;
     }
 
-    async checkUserSignUp(username: string) {
-        return await this.userService.findWithUsername(username);
-    }
-
     async signIn(user: UserEntity): Promise<TokenResponse> {
         return await this.createToken(user.fullname, user.username);
     }
